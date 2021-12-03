@@ -25,7 +25,7 @@ public class BookingRepository {
     private BookingLiveData currentBooking;
     private MutableLiveData<List<BookingLiveData>> bookinglist = new MutableLiveData<>();
     private final List<Booking> bookings = new ArrayList<>();
-    private CallBackBooking callBackBooking;
+    //private CallBackBooking callBackBooking;
 
     private BookingRepository(){
     }
