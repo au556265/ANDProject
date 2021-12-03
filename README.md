@@ -25,5 +25,14 @@ Low
 ### Youtube link
 https://www.youtube.com/watch?v=dFVjjZCsDUI
 
+#### Resources
+https://github.com/KasperKnop/NavigationExample
+
+https://github.com/KasperKnop/GoogleServicesExample
+
+https://github.com/KasperKnop/NavigationExample
+
+Recycleview inspired from lesson
+
 
 
