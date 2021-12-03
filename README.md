@@ -32,7 +32,7 @@ https://github.com/KasperKnop/GoogleServicesExample
 
 https://github.com/KasperKnop/NavigationExample
 
-Recycleview inspired from lesson
+Recycleview inspired from Android lesson
 
 
 
