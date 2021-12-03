@@ -7,7 +7,7 @@ The motivation for the salon-booking application is to make it easier for the sa
 
 ## Requirements
 High
-- [x] As a new customer I must be able to create an account. 
+- [x] As a new customer I must be able to sign up. 
 - [x] As a user I want to be able to login with my email, so I can access the application. 
 - [x] As a user I want to be able to view the services, so I can see what the salon offers. 
 - [x] As a user I want to be able to book an appointment, so I save time. 
