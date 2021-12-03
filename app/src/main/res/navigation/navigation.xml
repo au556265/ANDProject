@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/frontpage">
+
+    <fragment
+        android:id="@+id/frontpage"
+        android:name="com.github.au556265.myprojectapplication.UI.Frontpage"
+        android:label="Amsterdam Salon"
+        tools:layout="@layout/fragment_frontpage" />
+
+    <fragment
+        android:id="@+id/serviceId"
+        android:name="com.github.au556265.myprojectapplication.UI.Services.RecycleViewServices"
+        android:label="Services"
+        tools:layout="@layout/fragment_recycle_view_services" />
+
+    <fragment
+        android:id="@+id/boookId"
+        android:name="com.github.au556265.myprojectapplication.UI.Bookings.BookingFragment"
+        android:label="Book"
+        tools:layout="@layout/fragment_booking" />
+
+
+
+</navigation>

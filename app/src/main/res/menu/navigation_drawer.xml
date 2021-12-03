@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+        <group android:id="@+id/data">
+            <item
+                android:id="@+id/frontpage"
+                android:title="@string/amsterdam_salon" />
+
+            <item
+                android:id="@+id/serviceId"
+                android:title="Services" />
+
+            <item
+                android:id="@+id/boookId"
+                android:title="@string/book_appointment" />
+
+
+
+
+        </group>
+
+
+</menu>

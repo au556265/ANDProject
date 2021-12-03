@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">MyProjectApplication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fName">First name</string>
+    <string name="lName">Last name</string>
+    <string name="address">Address</string>
+    <string name="Username">UserName</string>
+    <string name="UserRole">User role</string>
+    <string name="RegisterUser">Register user</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="book_appointment">Book appointment</string>
+    <string name="action_settings">action settings</string>
+    <string name="amsterdam_salon">Amsterdam Salon</string>
+    <string name="AboutSalon">We are experts in classic men\'s and women\'s haircuts. Fast, careful and sharp at good prices. Flexible opening hours and you can easily book an appointment digitally that suits you.</string>
+    <string name="phone">Phone number</string>
+    <string name="amsterdam">About Salon Amsterdam</string>
+    <string name="date">Date</string>
+    <string-array name="time_array">
+        <item>11:00-11:30</item>
+        <item>11:30-12:00</item>
+        <item>12:00-12:30</item>
+        <item>12:30-13:00</item>
+        <item>13:00-13:30</item>
+        <item>13:30-14:00</item>
+        <item>14:00-14:30</item>
+        <item>14:30-15:00</item>
+        <item>15:00-15:30</item>
+        <item>15:30-16:00</item>
+        <item>16:00-16:30</item>
+        <item>16:30-17:00</item>
+        <item>17:00-17:30</item>
+
+    </string-array>
 </resources>

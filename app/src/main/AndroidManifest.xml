@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.au556265.myprojectapplication">
 
+
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyProjectApplication">
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UI.User.RegisterUser"
+            android:exported="true" />
+        <activity
+            android:name=".UI.User.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
