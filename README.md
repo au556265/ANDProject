@@ -22,5 +22,8 @@ Low
 - [ ] As an employee I want to be able to add services that the salon offers.
 - [ ] As a user I want to be able to delete my account.
 
+###Youtube link
+https://www.youtube.com/watch?v=dFVjjZCsDUI
+
 
 
