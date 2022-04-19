@@ -5,6 +5,7 @@ appointment.
 The motivation for the salon-booking application is to make it easier for the salon to manage their bookings, where the customer will be able to book and cancel appointments. The application will also have be able to display the salons offers and prices, in overall improve the customer/user experience.
 
 
+
 ## Requirements
 High
 - [x] As a new customer I must be able to sign up. 
@@ -22,7 +23,5 @@ Low
 - [ ] As an employee I want to be able to add services that the salon offers.
 - [ ] As a user I want to be able to delete my account.
 
-
-
-
-
+Comments 
+- The Application is not completed
