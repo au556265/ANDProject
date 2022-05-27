@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class UserRepository {
+public class UserRepository extends LiveData<FirebaseUser>{
     private DatabaseReference myRef;
     private static UserRepository instance;
     private final Application app;

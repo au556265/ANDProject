@@ -3,6 +3,7 @@ package com.github.au556265.myprojectapplication.Repository.Booking;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.github.au556265.myprojectapplication.CallBacks.CallBackBooking;
@@ -17,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingRepository {
+public class BookingRepository extends LiveData<ArrayList<Booking>> {
     private static BookingRepository instance;
     private static final String TAG = "repository";
     private DatabaseReference myRef;
@@ -28,6 +29,7 @@ public class BookingRepository {
     //private CallBackBooking callBackBooking;
 
     private BookingRepository(){
+        //this.callBackBooking=callBackBooking;
     }
 
     public static synchronized BookingRepository getInstance() {
@@ -39,7 +41,8 @@ public class BookingRepository {
     public void init(String userId) {
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Bookings");
         currentBooking = new BookingLiveData(myRef);
-       // readBookings();
+       readBookings();
+
 
     }
 
@@ -70,15 +73,17 @@ public class BookingRepository {
                     keys.add(postSnapshot.getKey());
                     Booking booking = postSnapshot.getValue(Booking.class);
                     bookings.add(booking);
+                   // callBackBooking.getBookings(bookings);
                 }
-               // callback.getAllBooking(bookings,keys);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
+
     }
 
 

@@ -17,7 +17,8 @@ public class BookingLiveData extends LiveData<Booking> {
 
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+            Booking booking = snapshot.getValue(Booking.class);
+            setValue(booking);
         }
 
         @Override

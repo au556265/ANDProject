@@ -15,6 +15,10 @@
             <item
                 android:id="@+id/boookId"
                 android:title="@string/book_appointment" />
+            <item
+                android:id="@+id/viewBookingId"
+                android:title="View bookings" />
+
 
 
 

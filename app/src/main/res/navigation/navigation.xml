@@ -23,6 +23,13 @@
         android:label="Book"
         tools:layout="@layout/fragment_booking" />
 
+    <fragment
+        android:id="@+id/viewBookingId"
+        android:name="com.github.au556265.myprojectapplication.UI.Bookings.ViewBookingsFragment"
+        android:label="View bookings"
+        tools:layout="@layout/fragment_booking"
+        />
+
 
 
 </navigation>

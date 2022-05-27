@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 OnClickLogin();
-                checkIfSignedIn();
             }
         });
 
@@ -67,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            goToNewView();
+                            checkIfSignedIn();
                             Toast.makeText(LoginActivity.this,"Login Succeded",Toast.LENGTH_LONG).show();
                             // Sign in success, update UI with the signed-in user's information
                         } else {
@@ -80,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void checkIfSignedIn() {
+   private void checkIfSignedIn() {
         viewModel.getCurrentUser().observe(this, user -> {
             if (user != null)
             goToNewView();
