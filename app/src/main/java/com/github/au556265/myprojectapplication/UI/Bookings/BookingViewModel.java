@@ -33,7 +33,7 @@ public class BookingViewModel extends AndroidViewModel {
     }
 
     public void getAllBookings(){
-        bookingRepository.readBookings();
+        bookingRepository.registerBookingsListener();
     }
 
 

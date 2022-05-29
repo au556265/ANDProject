@@ -6,29 +6,27 @@
     android:padding="5dp"
     >
 
-    <!-- TODO: Update blank fragment layout -->
-
-
     <TextView
         android:id="@+id/date_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:layout_weight="1.5"
         android:text="@string/date"
-        android:textSize="20sp" />
+        />
+    <TextView
+        android:id="@+id/time_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="time:" />
 
     <TextView
         android:id="@+id/email_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="Email:" />
 
-    <TextView
-        android:id="@+id/phone_number_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phonenumber:" />
 
 
 </LinearLayout>

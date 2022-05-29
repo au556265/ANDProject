@@ -27,7 +27,7 @@
         android:id="@+id/viewBookingId"
         android:name="com.github.au556265.myprojectapplication.UI.Bookings.ViewBookingsFragment"
         android:label="View bookings"
-        tools:layout="@layout/fragment_booking"
+        tools:layout="@layout/fragment_recycle_view_bookings"
         />
 
 

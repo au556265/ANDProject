@@ -10,70 +10,63 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.R;
+import com.github.au556265.myprojectapplication.UI.Bookings.ViewBookingsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ViewHolder>{
-    List<Booking> bookingList;
-    //BookingAdapter.OnListItemClickListener listener;
-    // BookingAdapter.OnListItemClickListener listener
-    //List<Booking> bookings
-    public BookingAdapter() {
-        //this.bookingList = this.bookingList;
-        //this.listener=listener;
+public class BookingAdapter2 extends RecyclerView.Adapter<BookingAdapter2.ViewHolder>{
+    private List<Booking> bookingList = new ArrayList<>();
+    private ViewBookingsFragment viewBookingsFragment;
+    public BookingAdapter2() {
     }
 
     @NonNull
     @Override
-    public BookingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BookingAdapter2.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.fragment_viewbookings, parent, false);
-        return new ViewHolder(view);
+        return new BookingAdapter2.ViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookingAdapter.ViewHolder holder, int position) {
-        holder.mDateTime.setText(bookingList.get(position).getBookingTime());
+    public void onBindViewHolder(@NonNull BookingAdapter2.ViewHolder holder, int position) {
+        holder.mDateTime.setText(bookingList.get(position).getBookingDate());
         holder.mEmail.setText(bookingList.get(position).getEmail());
-
+        holder.mTime.setText(bookingList.get(position).getBookingTime());
     }
 
     @Override
     public int getItemCount() {
+        if(bookingList==null){
+            return 0;
+        }else
         return bookingList.size();
     }
 
+
+
     public void setBookingItems(ArrayList<Booking> bookingList) {
         this.bookingList = bookingList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView mDateTime;
         TextView mEmail;
-        //TextView mTime;
-        //String key;
+        TextView mTime;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            /*
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listener.onClick(getAdapterPosition());
-                }
-            });*/
             mDateTime=itemView.findViewById(R.id.date_item);
-            //mTime=itemView.findViewById(R.id.time_item);
+            mTime=itemView.findViewById(R.id.time_item);
             mEmail=itemView.findViewById(R.id.email_item);
-
 
 
         }
     }
 
-    public interface  OnListItemClickListener{
-        void onClick(int position);
-    }
 }
+

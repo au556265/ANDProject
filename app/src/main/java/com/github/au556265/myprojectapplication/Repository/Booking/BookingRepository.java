@@ -24,12 +24,9 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
     private DatabaseReference myRef;
 
     private BookingLiveData currentBooking;
-    private MutableLiveData<List<BookingLiveData>> bookinglist = new MutableLiveData<>();
-    private final List<Booking> bookings = new ArrayList<>();
-    //private CallBackBooking callBackBooking;
+    private final ArrayList<Booking> bookings = new ArrayList<>();
 
     private BookingRepository(){
-        //this.callBackBooking=callBackBooking;
     }
 
     public static synchronized BookingRepository getInstance() {
@@ -41,26 +38,22 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
     public void init(String userId) {
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Bookings");
         currentBooking = new BookingLiveData(myRef);
-       readBookings();
+       registerBookingsListener();
 
 
     }
 
     public void createBooking(String bookingDate, String bookingTime) {
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-
         myRef.push().setValue(new Booking(bookingDate,bookingTime,email));
-
-
-    }
-
-    public BookingLiveData getCurrentBooking() {
-        return currentBooking;
     }
 
 
 
-    public void readBookings(){
+    public void registerBookingsListener(){
+        Booking test = new Booking("22-06-30","11:30","test@hotmail.com");
+        bookings.add(test);
+        setValue(bookings);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,8 +66,9 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
                     keys.add(postSnapshot.getKey());
                     Booking booking = postSnapshot.getValue(Booking.class);
                     bookings.add(booking);
-                   // callBackBooking.getBookings(bookings);
+
                 }
+                setValue(bookings);
             }
 
             @Override
@@ -82,6 +76,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
 
 
     }

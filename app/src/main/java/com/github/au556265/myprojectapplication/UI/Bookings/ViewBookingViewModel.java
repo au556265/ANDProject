@@ -6,25 +6,27 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.github.au556265.myprojectapplication.CallBacks.CallBackBooking;
 import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.Repository.Booking.BookingRepository;
+import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ViewBookingViewModel extends AndroidViewModel {
-    private BookingRepository repository;
-    private ArrayList<Booking> bookings;
+    private BookingRepository bookingRepository;
+    private final UserRepository userRepository;
 
     public ViewBookingViewModel(@NonNull Application app) {
         super(app);
-        repository = BookingRepository.getInstance();
+        bookingRepository = BookingRepository.getInstance();
+        userRepository = UserRepository.getInstance(app);
     }
-
-
-
+    public void init(){
+        String userId = userRepository.getCurrentUser().getValue().getUid();
+        bookingRepository.init(userId);
+    }
     public LiveData<ArrayList<Booking>> getBookings() {
-        return repository;
+        return bookingRepository;
     }
+
 }

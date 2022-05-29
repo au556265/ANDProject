@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.au556265.myprojectapplication.Adapter.BookingAdapter;
+import com.github.au556265.myprojectapplication.Adapter.BookingAdapter2;
 import com.github.au556265.myprojectapplication.CallBacks.CallBackBooking;
 import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.R;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class ViewBookingsFragment extends Fragment {
     private ViewBookingViewModel viewModel;
     RecyclerView recyclerView;
-    BookingAdapter adapter;
+    BookingAdapter2 adapter;
     View view;
 
 
@@ -34,26 +34,28 @@ public class ViewBookingsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_recycle_view_bookings, container, false);
 
         viewModel = new ViewModelProvider(this).get(ViewBookingViewModel.class);
-        recyclerView = view.findViewById(R.id.rvbookings);
+        viewModel.init();
 
+        recyclerView = view.findViewById(R.id.rvbookings);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.hasFixedSize();
 
-        adapter = new BookingAdapter();
+        adapter = new BookingAdapter2();
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         getBookings();
-
         return view;
     }
+
     private void getBookings() {
         viewModel.getBookings().observe(getViewLifecycleOwner(), new Observer<ArrayList<Booking>>() {
-
             @Override
             public void onChanged(ArrayList<Booking> bookings) {
                 adapter.setBookingItems(bookings);
                 System.out.println(bookings.get(0));
-                recyclerView.setAdapter(adapter);
             }
         });
+
     }
 }
