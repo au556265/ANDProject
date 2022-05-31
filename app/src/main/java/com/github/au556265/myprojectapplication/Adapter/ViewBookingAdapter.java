@@ -15,23 +15,22 @@ import com.github.au556265.myprojectapplication.UI.Bookings.ViewBookingsFragment
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingAdapter2 extends RecyclerView.Adapter<BookingAdapter2.ViewHolder>{
+public class ViewBookingAdapter extends RecyclerView.Adapter<ViewBookingAdapter.ViewHolder>{
     private List<Booking> bookingList = new ArrayList<>();
-    private ViewBookingsFragment viewBookingsFragment;
-    public BookingAdapter2() {
+    public ViewBookingAdapter() {
     }
 
     @NonNull
     @Override
-    public BookingAdapter2.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewBookingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.fragment_viewbookings, parent, false);
-        return new BookingAdapter2.ViewHolder(view);
+        return new ViewBookingAdapter.ViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookingAdapter2.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewBookingAdapter.ViewHolder holder, int position) {
         holder.mDateTime.setText(bookingList.get(position).getBookingDate());
         holder.mEmail.setText(bookingList.get(position).getEmail());
         holder.mTime.setText(bookingList.get(position).getBookingTime());
@@ -44,8 +43,6 @@ public class BookingAdapter2 extends RecyclerView.Adapter<BookingAdapter2.ViewHo
         }else
         return bookingList.size();
     }
-
-
 
     public void setBookingItems(ArrayList<Booking> bookingList) {
         this.bookingList = bookingList;

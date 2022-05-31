@@ -13,6 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -48,12 +49,11 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
         myRef.push().setValue(new Booking(bookingDate,bookingTime,email));
     }
 
-
+    public void DeleteBooking(String id){
+        myRef.child(id).removeValue();
+    }
 
     public void registerBookingsListener(){
-        Booking test = new Booking("22-06-30","11:30","test@hotmail.com");
-        bookings.add(test);
-        setValue(bookings);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -65,6 +65,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
                     Log.d(TAG, "onDataChange: " + postSnapshot);
                     keys.add(postSnapshot.getKey());
                     Booking booking = postSnapshot.getValue(Booking.class);
+                    booking.setId(postSnapshot.getKey());
                     bookings.add(booking);
 
                 }

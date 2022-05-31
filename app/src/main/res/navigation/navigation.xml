@@ -30,6 +30,11 @@
         tools:layout="@layout/fragment_recycle_view_bookings"
         />
 
-
+    <fragment
+        android:id="@+id/deleteBookingId"
+        android:name="com.github.au556265.myprojectapplication.UI.Bookings.DeleteBookingsFragment"
+        android:label="Delete bookings"
+        tools:layout="@layout/fragment_delete_bookings"
+        />
 
 </navigation>

@@ -12,19 +12,23 @@ import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 import java.util.ArrayList;
 
-public class ViewBookingViewModel extends AndroidViewModel {
-    private BookingRepository bookingRepository;
-    private final UserRepository userRepository;
+public class ViewBookingViewModel extends BookingBaseViewModel {
+    public ViewBookingViewModel(@NonNull Application application) {
+        super(application);
+    }
 
-    public ViewBookingViewModel(@NonNull Application app) {
-        super(app);
-        bookingRepository = BookingRepository.getInstance();
-        userRepository = UserRepository.getInstance(app);
-    }
-    public void init(){
-        String userId = userRepository.getCurrentUser().getValue().getUid();
-        bookingRepository.init(userId);
-    }
+    /*private BookingRepository bookingRepository;
+       private final UserRepository userRepository;
+
+        public ViewBookingViewModel(@NonNull Application app) {
+            super(app);
+            bookingRepository = BookingRepository.getInstance();
+            userRepository = UserRepository.getInstance(app);
+        }
+        public void init(){
+            String userId = userRepository.getCurrentUser().getValue().getUid();
+            bookingRepository.init(userId);
+        }*/
     public LiveData<ArrayList<Booking>> getBookings() {
         return bookingRepository;
     }

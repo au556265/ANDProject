@@ -8,18 +8,11 @@ import androidx.lifecycle.AndroidViewModel;
 import com.github.au556265.myprojectapplication.Repository.Booking.BookingRepository;
 import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
+public class BookingBaseViewModel extends AndroidViewModel {
+    protected BookingRepository bookingRepository;
+    protected final UserRepository userRepository;
 
-public class BookingViewModel extends BookingBaseViewModel{
-    public BookingViewModel(@NonNull Application application) {
-        super(application);
-    }
-
-    /*private BookingRepository bookingRepository;
-
-    private final UserRepository userRepository;
-
-
-    public BookingViewModel(@NonNull Application application) {
+    public BookingBaseViewModel(@NonNull Application application) {
         super(application);
         bookingRepository = BookingRepository.getInstance();
         userRepository=UserRepository.getInstance(application);
@@ -28,10 +21,5 @@ public class BookingViewModel extends BookingBaseViewModel{
     public void init(){
         String userId = userRepository.getCurrentUser().getValue().getUid();
         bookingRepository.init(userId);
-    }*/
-
-    public void createBooking(String date, String time){
-        bookingRepository.createBooking(date, time);
     }
-
 }

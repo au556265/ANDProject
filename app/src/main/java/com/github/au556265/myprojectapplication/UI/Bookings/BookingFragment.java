@@ -46,7 +46,7 @@ public class BookingFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         time_spinner.setAdapter(adapter);
 
-          Button button = view.findViewById(R.id.addbooking);
+        Button button = view.findViewById(R.id.addbooking);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

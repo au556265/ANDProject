@@ -4,6 +4,7 @@ public class Booking {
     private String bookingTime;
     private String bookingDate;
     private String email;
+    private String id;
     //private String phonenumber;
 
     public Booking(){}
@@ -53,14 +54,12 @@ public class Booking {
     public void setBookingDate(String bookingDate) {
         this.bookingDate = bookingDate;
     }
-/*
-    public String getPhonenumber() {
-        return phonenumber;
+
+    public String getId() {
+        return id;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setId(String id) {
+        this.id = id;
     }
-
- */
 }

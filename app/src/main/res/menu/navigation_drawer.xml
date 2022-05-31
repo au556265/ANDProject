@@ -19,8 +19,9 @@
                 android:id="@+id/viewBookingId"
                 android:title="View bookings" />
 
-
-
+            <item
+                android:id="@+id/deleteBookingId"
+                android:title="Delete bookings" />
 
 
         </group>
