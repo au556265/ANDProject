@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     private LoginViewModel viewModel;
 
-
-
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -65,16 +63,18 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         navigationDrawer = findViewById(R.id.navigation_drawer);
         drawerLayout = findViewById(R.id.drawer_layout);
-
     }
     private void setupNavigation() {
         Toast.makeText(this,"SetUp",Toast.LENGTH_LONG).show();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         setSupportActionBar(toolbar);
         appBarConfiguration = new AppBarConfiguration.Builder(
-
                 R.id.frontpage,
-                R.id.boookId)
+                R.id.serviceId,
+                R.id.boookId,
+                R.id.viewBookingId,
+                R.id.deleteBookingId
+                )
                 .setOpenableLayout(drawerLayout)
                 .build();
 

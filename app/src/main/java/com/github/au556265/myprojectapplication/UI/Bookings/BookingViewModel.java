@@ -14,22 +14,6 @@ public class BookingViewModel extends BookingBaseViewModel{
         super(application);
     }
 
-    /*private BookingRepository bookingRepository;
-
-    private final UserRepository userRepository;
-
-
-    public BookingViewModel(@NonNull Application application) {
-        super(application);
-        bookingRepository = BookingRepository.getInstance();
-        userRepository=UserRepository.getInstance(application);
-
-    }
-    public void init(){
-        String userId = userRepository.getCurrentUser().getValue().getUid();
-        bookingRepository.init(userId);
-    }*/
-
     public void createBooking(String date, String time){
         bookingRepository.createBooking(date, time);
     }

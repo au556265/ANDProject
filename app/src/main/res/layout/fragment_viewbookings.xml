@@ -17,16 +17,16 @@
         android:id="@+id/time_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.5"
+        android:layout_weight="1.4"
         android:text="time:" />
 
     <TextView
         android:id="@+id/email_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Email:" />
-
+        android:layout_weight="1.1"
+        android:text="Email:"
+        android:textAlignment="textEnd" />
 
 
 </LinearLayout>

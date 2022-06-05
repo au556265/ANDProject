@@ -18,20 +18,6 @@ public class DeleteBookingViewModel extends BookingBaseViewModel {
     public DeleteBookingViewModel(@NonNull Application application) {
         super(application);
     }
-    //extends AndroidViewModel
-    /*private BookingRepository bookingRepository;
-    private final UserRepository userRepository;
-
-    public DeleteBookingViewModel(@NonNull Application app) {
-        super(app);
-        bookingRepository = BookingRepository.getInstance();
-        userRepository = UserRepository.getInstance(app);
-    }
-    public void init(){
-        String userId = userRepository.getCurrentUser().getValue().getUid();
-        bookingRepository.init(userId);
-    }
-   */
     public void deleteBooking(String id){
         bookingRepository.DeleteBooking(id);
     }
