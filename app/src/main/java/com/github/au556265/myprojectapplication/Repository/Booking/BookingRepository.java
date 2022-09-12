@@ -1,6 +1,7 @@
 package com.github.au556265.myprojectapplication.Repository.Booking;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -8,6 +9,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.github.au556265.myprojectapplication.CallBacks.CallBackBooking;
 import com.github.au556265.myprojectapplication.Models.Booking;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +20,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BookingRepository extends LiveData<ArrayList<Booking>> {
     private static BookingRepository instance;
@@ -51,6 +56,13 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
 
     public void DeleteBooking(String id){
         myRef.child(id).removeValue();
+    }
+
+    public void updateBooking(String id, String date, String time){
+        Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("bookingDate",date);
+        hashMap.put("bookingTime",time);
+        myRef.child(id).updateChildren(hashMap);
     }
 
     public void registerBookingsListener(){
