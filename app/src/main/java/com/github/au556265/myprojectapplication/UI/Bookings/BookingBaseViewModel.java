@@ -16,8 +16,8 @@ public class BookingBaseViewModel extends AndroidViewModel {
         super(application);
         bookingRepository = BookingRepository.getInstance();
         userRepository=UserRepository.getInstance(application);
-
     }
+
     public void init(){
         String userId = userRepository.getCurrentUser().getValue().getUid();
         bookingRepository.init(userId);

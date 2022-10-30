@@ -80,13 +80,16 @@ public class RegisterUser extends AppCompatActivity {
         }
         if(firstName.equals("")){
             mFirstName.setError("First name is required");
+            isValid=false;
         }
         if(lastName.equals("")){
             mLastName.setError("last name is required");
+            isValid=false;
         }
 
-        if(phoneNumber.equals("")){
-            mPhoneNumber.setError("Phone number is required");
+        if(phoneNumber.equals("")|| phoneNumber.length()!=8 ){
+            mPhoneNumber.setError("Phone number is required with 8 digits");
+            isValid=false;
         }
         if(isValid==true) {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
