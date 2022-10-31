@@ -1,5 +1,6 @@
 package com.github.au556265.myprojectapplication.UI;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -48,14 +49,15 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setupNavigation();
 
-        Button logoutButton = findViewById(R.id.log_out_button);
 
-        logoutButton.setOnClickListener(v ->
+        //Button logoutButton = findViewById(R.id.log_out);
+
+        /*logoutButton.setOnClickListener(v ->
         {
             startActivity(new Intent(this, LoginActivity.class));
             logOut();
             finish();
-        });
+        });*/
 
     }
 
@@ -65,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
     }
     private void setupNavigation() {
-        Toast.makeText(this,"SetUp",Toast.LENGTH_LONG).show();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         setSupportActionBar(toolbar);
         appBarConfiguration = new AppBarConfiguration.Builder(
@@ -103,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.log_out){
+            logOut();
+        }
         return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item);
     }
 
