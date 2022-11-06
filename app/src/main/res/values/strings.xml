@@ -16,7 +16,7 @@
     <string name="AboutSalon">We are experts in classic men\'s and women\'s haircuts. Fast, careful and sharp at good prices. Flexible opening hours and you can easily book an appointment digitally that suits you.</string>
     <string name="phone">Phone number</string>
     <string name="amsterdam">About Salon Amsterdam</string>
-    <string name="date">Date: </string>
+    <string name="date">Date </string>
     <string-array name="time_array">
         <item>11:00-11:30</item>
         <item>11:30-12:00</item>
