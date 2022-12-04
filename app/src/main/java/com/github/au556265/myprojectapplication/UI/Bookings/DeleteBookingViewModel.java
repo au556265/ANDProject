@@ -22,7 +22,7 @@ public class DeleteBookingViewModel extends BookingBaseViewModel {
         bookingRepository.DeleteBooking(id);
     }
     public LiveData<ArrayList<Booking>> getLiveDataBookings() {
-        return bookingRepository;
+        return listLiveData;
     }
 
 }

@@ -12,31 +12,47 @@
     <EditText
         android:id="@+id/date_time_input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_height="@dimen/fieldHeight"
+        android:layout_margin="20dp"
         android:hint="Select date and time"
         android:inputType="none"
+        android:gravity="center"
+        android:background="@drawable/input_holo_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/time_array"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fieldHeight"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/input_holo_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_time_input" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_appointments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/addbooking"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_time_input" />
 
     <Button
         android:id="@+id/addbooking"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:gravity="left"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
         android:text="Book appointment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_array" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

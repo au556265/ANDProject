@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.12314814814814815" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/activity_frontpage.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/activity_login2.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/activity_register_user2.xml" value="0.264" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_book.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_booking.xml" value="0.234375" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_delete_booking.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_delete_booking_item.xml" value="0.536" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_delete_bookings.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_frontpage.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_frontpage2.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_login.xml" value="0.176" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_bookings.xml" value="0.18125" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_service_and_prices.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_service_information.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_services.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_register_user.xml" value="0.264" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_service_and_price_item.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_services.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_services_and_price.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_update_booking_item.xml" value="0.264" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_update_bookings.xml" value="0.17291666666666666" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_view_bookings.xml" value="0.10092592592592593" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/fragment_viewbookings.xml" value="0.8" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/layout/navigation_drawer_header.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/menu/appbar.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/menu/menu.xml" value="0.4" />
-        <entry key="..\:/Users/fatem/AndroidStudioProjects/MyProjectApplication/app/src/main/res/menu/navigation_draw.xml" value="0.4" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_booking.xml" value="0.1598731884057971" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_frontpage.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_login.xml" value="0.1598731884057971" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_bookings.xml" value="0.1" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_recycle_view_services.xml" value="0.17346014492753623" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_services.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/fragment_viewbookings.xml" value="0.264" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/layout/navigation_drawer_header.xml" value="0.21979166666666666" />
-        <entry key="..\:/Users/fatem/Desktop/MyProjectApplication/app/src/main/res/menu/navigation_drawer.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

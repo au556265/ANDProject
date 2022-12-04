@@ -17,6 +17,6 @@ public class UpdateBookingsViewModel extends BookingBaseViewModel{
         bookingRepository.updateBooking(id, date, time);
     }
     public LiveData<ArrayList<Booking>> getLiveDataBookings() {
-        return bookingRepository;
+        return listLiveData;
     }
 }
