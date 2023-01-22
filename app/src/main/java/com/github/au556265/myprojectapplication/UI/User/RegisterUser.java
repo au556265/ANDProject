@@ -92,12 +92,14 @@ public class RegisterUser extends AppCompatActivity {
             isValid=false;
         }
         if(isValid==true) {
+            //create the user in authentication database
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         goToNewView();
                         Toast.makeText(RegisterUser.this, "User created. ", Toast.LENGTH_LONG).show();
+                        //create the user in the users database
                         viewModel.addUser(new User(firstName, lastName, phoneNumber, email));
                     } else {
                         Toast.makeText(RegisterUser.this, "Error " + task.getException().getMessage(), Toast.LENGTH_LONG).show();

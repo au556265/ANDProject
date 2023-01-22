@@ -52,7 +52,7 @@ public class ViewBookingsFragment extends Fragment {
             @Override
             public void onChanged(ArrayList<Booking> bookings) {
                 adapter.setBookingItems(bookings);
-                System.out.println(bookings.get(0));
+                //System.out.println(bookings.get(0));
             }
         });
 

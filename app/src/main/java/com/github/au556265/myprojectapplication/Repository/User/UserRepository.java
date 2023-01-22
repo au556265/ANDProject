@@ -29,6 +29,7 @@ public class UserRepository{
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("users");
     }
 
+    //adding user to
     public void addUser(User user){
         myRef.push().setValue(user);
     }

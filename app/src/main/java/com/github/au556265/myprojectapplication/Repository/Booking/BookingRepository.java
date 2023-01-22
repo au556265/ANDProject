@@ -43,7 +43,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
 
     public void init(String userId) {
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Bookings");
-        currentBooking = new BookingLiveData(myRef);
+        //currentBooking = new BookingLiveData(myRef);
        registerBookingsListener();
 
 
