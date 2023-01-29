@@ -3,10 +3,6 @@ package com.github.au556265.myprojectapplication.UI.Bookings;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
-
-import com.github.au556265.myprojectapplication.Repository.Booking.BookingRepository;
-import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 
 public class BookingViewModel extends BookingBaseViewModel{
@@ -18,4 +14,11 @@ public class BookingViewModel extends BookingBaseViewModel{
         bookingRepository.createBooking(date, time);
     }
 
+    public boolean isBookingAvailable(String mDateTime, String mTimeSpinner) {
+        return bookingRepository.isBookingAvaible(mDateTime, mTimeSpinner);
+    }
+
+    public boolean isBookingInFuture(String mDateTime, String mTimeSpinner) {
+        return bookingRepository.isBookingInFuture(mDateTime, mTimeSpinner);
+    }
 }

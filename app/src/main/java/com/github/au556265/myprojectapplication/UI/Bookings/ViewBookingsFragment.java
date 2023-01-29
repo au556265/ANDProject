@@ -25,6 +25,8 @@ public class ViewBookingsFragment extends Fragment {
     ViewBookingAdapter adapter;
     View view;
 
+    ArrayList<String> adminAccount = new ArrayList<>();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +44,7 @@ public class ViewBookingsFragment extends Fragment {
         adapter = new ViewBookingAdapter();
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
+        adminAccount.add("admin@hotmail.com");
         getBookings();
         return view;
     }
@@ -51,8 +53,21 @@ public class ViewBookingsFragment extends Fragment {
         viewModel.getBookings().observe(getViewLifecycleOwner(), new Observer<ArrayList<Booking>>() {
             @Override
             public void onChanged(ArrayList<Booking> bookings) {
-                adapter.setBookingItems(bookings);
-                //System.out.println(bookings.get(0));
+                boolean isAdmin = false;
+                String email = viewModel.getEmail();
+                for (int i = 0; i < adminAccount.size(); i++) {
+                    if(email.equals(adminAccount.get(i))){
+                        isAdmin = true;
+                    }
+                }
+                if(!isAdmin){
+                    ArrayList<Booking> myBookings = viewModel.getOnlyMyBookings();
+                    adapter.setBookingItems(myBookings);
+                }
+                else {
+                    adapter.setBookingItems(bookings);
+                }
+
             }
         });
 

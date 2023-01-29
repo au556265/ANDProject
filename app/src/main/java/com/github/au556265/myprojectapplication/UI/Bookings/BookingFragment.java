@@ -15,8 +15,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.github.au556265.myprojectapplication.R;
+import com.github.au556265.myprojectapplication.UI.User.RegisterUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -79,7 +81,18 @@ public class BookingFragment extends Fragment {
     private void OnClicked() {
         String mDateTime =date_time.getText().toString();
         String mTimeSpinner = time_spinner.getSelectedItem().toString();
+        //check if booking avaible
+        boolean isBookingAvailable = viewModel.isBookingAvailable(mDateTime, mTimeSpinner);
+        //can only book in future
+        boolean isBookingInFuture = viewModel.isBookingInFuture(mDateTime, mTimeSpinner);
+        if(isBookingAvailable){
         viewModel.createBooking(mDateTime, mTimeSpinner);
+            Toast.makeText(getContext(), "The booking was successfull", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getContext(), "Booking is not avaible please pick another time", Toast.LENGTH_LONG).show();
+        }
+        //toast that shows bookingstatus
+
         }
 
     }

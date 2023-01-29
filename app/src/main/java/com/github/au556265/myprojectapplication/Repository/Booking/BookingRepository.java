@@ -1,9 +1,11 @@
 package com.github.au556265.myprojectapplication.Repository.Booking;
 
+import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -19,15 +21,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class BookingRepository extends LiveData<ArrayList<Booking>> {
     private static BookingRepository instance;
     private static final String TAG = "repository";
     private DatabaseReference myRef;
+
+    private String email;
 
     private BookingLiveData currentBooking;
     private final ArrayList<Booking> bookings = new ArrayList<>();
@@ -41,16 +50,19 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
         return instance;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public void init(String userId) {
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Bookings");
-        //currentBooking = new BookingLiveData(myRef);
-       registerBookingsListener();
-
+        email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        registerBookingsListener();
 
     }
 
+
     public void createBooking(String bookingDate, String bookingTime) {
-        String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         myRef.push().setValue(new Booking(bookingDate,bookingTime,email));
     }
 
@@ -64,6 +76,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
         hashMap.put("bookingTime",time);
         myRef.child(id).updateChildren(hashMap);
     }
+
 
     public void registerBookingsListener(){
         myRef.addValueEventListener(new ValueEventListener() {
@@ -95,5 +108,46 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
     }
 
 
+    public ArrayList<Booking> getOnlyMyBookings() {
+            ArrayList<Booking> myBookings = new ArrayList<>();
+            String currentEmail = email;
+            for (int i = 0; i < bookings.size(); i++) {
+                if(bookings.get(i).getEmail().equals(currentEmail)){
+                    myBookings.add(bookings.get(i));
+                }
+            }
+            return myBookings;
+    }
 
+    public boolean isBookingAvaible(String date, String time) {
+        for (int i = 0; i < bookings.size(); i++) {
+            if(bookings.get(i).getBookingDate().equals(date)
+                    && bookings.get(i).getBookingTime().equals(time)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public boolean isBookingInFuture(String date, String time) {
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yy-MM-dd");
+        LocalDate localDate = LocalDate.parse(date, pattern);
+
+        if(localDate.isAfter(LocalDate.now()))
+            return true;
+        if(localDate.isEqual(LocalDate.now()))
+        {
+            String[] timeSplit = time.split(":");
+
+            int hour = Integer.parseInt(timeSplit[0]);
+            int minute = Integer.parseInt(timeSplit[1]);
+
+            if(hour > LocalTime.now().getHour())
+                return true;
+            if(hour == LocalTime.now().getHour() && minute > LocalTime.now().getMinute())
+                return true;
+        }
+        return false;
+    }
 }

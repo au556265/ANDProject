@@ -17,6 +17,12 @@ public class ViewBookingViewModel extends BookingBaseViewModel {
         super(application);
     }
 
+    public String getEmail(){
+        return bookingRepository.getEmail();
+    }
+    public ArrayList<Booking> getOnlyMyBookings(){
+        return bookingRepository.getOnlyMyBookings();
+    }
     public LiveData<ArrayList<Booking>> getBookings() {
         return bookingRepository;
     }
