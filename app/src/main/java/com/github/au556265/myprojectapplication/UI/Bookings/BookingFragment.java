@@ -85,11 +85,13 @@ public class BookingFragment extends Fragment {
         boolean isBookingAvailable = viewModel.isBookingAvailable(mDateTime, mTimeSpinner);
         //can only book in future
         boolean isBookingInFuture = viewModel.isBookingInFuture(mDateTime, mTimeSpinner);
-        if(isBookingAvailable){
+        if(isBookingAvailable && isBookingInFuture){
         viewModel.createBooking(mDateTime, mTimeSpinner);
             Toast.makeText(getContext(), "The booking was successfull", Toast.LENGTH_LONG).show();
-        }else{
+        }else if(!isBookingAvailable){
             Toast.makeText(getContext(), "Booking is not avaible please pick another time", Toast.LENGTH_LONG).show();
+        }else if(!isBookingInFuture){
+            Toast.makeText(getContext(), "Please select a correct date and time for your booking", Toast.LENGTH_LONG).show();
         }
         //toast that shows bookingstatus
 

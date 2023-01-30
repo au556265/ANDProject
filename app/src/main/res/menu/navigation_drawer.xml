@@ -13,6 +13,10 @@
                 android:title="Services" />
 
             <item
+                android:id="@+id/service_add_service_Id"
+                android:title="Add service" />
+
+            <item
                 android:id="@+id/boookId"
                 android:title="@string/book_appointment" />
             <item

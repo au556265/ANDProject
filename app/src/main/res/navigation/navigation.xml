@@ -16,6 +16,11 @@
         android:name="com.github.au556265.myprojectapplication.UI.Services.RecycleViewServices"
         android:label="Services"
         tools:layout="@layout/fragment_recycle_view_services" />
+    <fragment
+        android:id="@+id/service_add_service_Id"
+        android:name="com.github.au556265.myprojectapplication.UI.Services.AddServicesFragment"
+        android:label="Add Service"
+        tools:layout="@layout/fragment_add_services" />
 
     <fragment
         android:id="@+id/boookId"
