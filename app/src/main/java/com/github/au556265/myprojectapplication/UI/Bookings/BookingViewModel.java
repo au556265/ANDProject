@@ -4,6 +4,12 @@ import android.app.Application;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+
+import com.github.au556265.myprojectapplication.Models.Booking;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BookingViewModel extends BookingBaseViewModel{
@@ -24,5 +30,22 @@ public class BookingViewModel extends BookingBaseViewModel{
             return bookingRepository.isBookingInFuture(mDateTime, mTimeSpinner);
         }
         return false;
+    }
+
+    public void deleteBooking(String id){
+        bookingRepository.DeleteBooking(id);
+    }
+    public LiveData<List<Booking>> getLiveDataBookings() {
+        return bookingRepository.getMutableBookings();
+    }
+
+    public String getEmail(){
+        return bookingRepository.getEmail();
+    }
+    public ArrayList<Booking> getOnlyMyBookings(){
+        return bookingRepository.getOnlyMyBookings();
+    }
+    public LiveData<List<Booking>> getBookings() {
+        return bookingRepository.getMutableBookings();
     }
 }

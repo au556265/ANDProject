@@ -21,7 +21,7 @@ import java.util.List;
 
 
 public class ViewBookingsFragment extends Fragment {
-    private ViewBookingViewModel viewModel;
+    private BookingViewModel viewModel;
     RecyclerView recyclerView;
     ViewBookingAdapter adapter;
     View view;
@@ -35,7 +35,7 @@ public class ViewBookingsFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_recycle_view_bookings, container, false);
 
-        viewModel = new ViewModelProvider(this).get(ViewBookingViewModel.class);
+        viewModel = new ViewModelProvider(this).get(BookingViewModel.class);
         viewModel.init();
 
         recyclerView = view.findViewById(R.id.rvbookings);

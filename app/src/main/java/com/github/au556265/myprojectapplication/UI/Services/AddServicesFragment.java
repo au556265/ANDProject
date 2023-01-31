@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.github.au556265.myprojectapplication.R;
 import com.github.au556265.myprojectapplication.UI.Bookings.BookingViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -44,28 +45,38 @@ public class AddServicesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_services, container, false);
-        viewModel = new ViewModelProvider(this).get(AddServicesViewModel.class);
-        viewModel.init();
-        name = view.findViewById(R.id.service_name);
-        price = view.findViewById(R.id.service_price);
-        
-        serviceButton = view.findViewById(R.id.service_add_service_button);
-        addImageButton = view.findViewById(R.id.service_select_image_button);
-        
-        serviceButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OnClicked();
-            }
-        });
-        
-        addImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectImage();
-            }
-        });
+        String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        View view = null;
+        if(email.equals("admin@hotmail.com"))
+        {
+            view = inflater.inflate(R.layout.fragment_add_services, container, false);
+            viewModel = new ViewModelProvider(this).get(AddServicesViewModel.class);
+            viewModel.init();
+            name = view.findViewById(R.id.service_name);
+            price = view.findViewById(R.id.service_price);
+
+            serviceButton = view.findViewById(R.id.service_add_service_button);
+            addImageButton = view.findViewById(R.id.service_select_image_button);
+
+            serviceButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    OnClicked();
+                }
+            });
+
+            addImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    selectImage();
+                }
+            });
+        }
+        else
+        {
+            view = inflater.inflate(R.layout.restricted_access_layout, container, false);
+        }
+
         return view;
     }
 

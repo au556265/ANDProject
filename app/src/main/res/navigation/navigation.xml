@@ -41,11 +41,6 @@
         android:label="Delete bookings"
         tools:layout="@layout/fragment_delete_bookings"
         />
-    <fragment
-        android:id="@+id/updateBookingId"
-        android:name="com.github.au556265.myprojectapplication.UI.Bookings.UpdateBookingsFragment"
-        android:label="Update bookings"
-        tools:layout="@layout/fragment_update_bookings"
-        />
+
 
 </navigation>

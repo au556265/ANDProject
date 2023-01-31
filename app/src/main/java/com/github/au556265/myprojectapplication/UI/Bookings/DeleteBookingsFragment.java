@@ -22,7 +22,7 @@ import java.util.List;
 
 public class DeleteBookingsFragment extends Fragment {
 
-    private DeleteBookingViewModel viewModel;
+    private BookingViewModel viewModel;
     RecyclerView recyclerView;
     DeleteBookingAdapter adapter;
     View view;
@@ -32,7 +32,7 @@ public class DeleteBookingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_delete_bookings, container, false);
-        viewModel = new ViewModelProvider(this).get(DeleteBookingViewModel.class);
+        viewModel = new ViewModelProvider(this).get(BookingViewModel.class);
         viewModel.init();
 
         recyclerView = view.findViewById(R.id.rv_delete_bookings);
