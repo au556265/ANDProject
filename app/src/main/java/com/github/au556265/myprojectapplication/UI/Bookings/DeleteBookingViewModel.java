@@ -13,6 +13,7 @@ import com.github.au556265.myprojectapplication.Repository.Booking.BookingReposi
 import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteBookingViewModel extends BookingBaseViewModel {
     public DeleteBookingViewModel(@NonNull Application application) {
@@ -21,8 +22,8 @@ public class DeleteBookingViewModel extends BookingBaseViewModel {
     public void deleteBooking(String id){
         bookingRepository.DeleteBooking(id);
     }
-    public LiveData<ArrayList<Booking>> getLiveDataBookings() {
-        return bookingRepository;
+    public LiveData<List<Booking>> getLiveDataBookings() {
+        return bookingRepository.getMutableBookings();
     }
 
 }

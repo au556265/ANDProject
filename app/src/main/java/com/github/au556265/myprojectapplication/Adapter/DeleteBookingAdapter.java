@@ -50,7 +50,7 @@ public class DeleteBookingAdapter extends RecyclerView.Adapter<DeleteBookingAdap
         }else
             return bookingList.size();
     }
-    public void setBookingItems(ArrayList<Booking> bookingList) {
+    public void setBookingItems(List<Booking> bookingList) {
         this.bookingList = bookingList;
         notifyDataSetChanged();
     }

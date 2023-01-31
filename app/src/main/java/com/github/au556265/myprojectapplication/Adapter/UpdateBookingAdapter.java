@@ -61,7 +61,7 @@ public class UpdateBookingAdapter extends RecyclerView.Adapter<UpdateBookingAdap
         }else
             return bookingList.size();
     }
-    public void setBookingItems(ArrayList<Booking> bookingList) {
+    public void setBookingItems(List<Booking> bookingList) {
         this.bookingList = bookingList;
         notifyDataSetChanged();
     }

@@ -1,6 +1,7 @@
 package com.github.au556265.myprojectapplication.UI.Bookings;
 
 import android.app.Application;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 
@@ -19,6 +20,9 @@ public class BookingViewModel extends BookingBaseViewModel{
     }
 
     public boolean isBookingInFuture(String mDateTime, String mTimeSpinner) {
-        return bookingRepository.isBookingInFuture(mDateTime, mTimeSpinner);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return bookingRepository.isBookingInFuture(mDateTime, mTimeSpinner);
+        }
+        return false;
     }
 }

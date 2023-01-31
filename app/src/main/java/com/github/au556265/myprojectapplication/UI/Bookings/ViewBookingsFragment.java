@@ -17,6 +17,7 @@ import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ViewBookingsFragment extends Fragment {
@@ -50,9 +51,9 @@ public class ViewBookingsFragment extends Fragment {
     }
 
     private void getBookings() {
-        viewModel.getBookings().observe(getViewLifecycleOwner(), new Observer<ArrayList<Booking>>() {
+        viewModel.getBookings().observe(getViewLifecycleOwner(), new Observer<List<Booking>>() {
             @Override
-            public void onChanged(ArrayList<Booking> bookings) {
+            public void onChanged(List<Booking> bookings) {
                 boolean isAdmin = false;
                 String email = viewModel.getEmail();
                 for (int i = 0; i < adminAccount.size(); i++) {
@@ -61,7 +62,7 @@ public class ViewBookingsFragment extends Fragment {
                     }
                 }
                 if(!isAdmin){
-                    ArrayList<Booking> myBookings = viewModel.getOnlyMyBookings();
+                    List<Booking> myBookings = viewModel.getOnlyMyBookings();
                     adapter.setBookingItems(myBookings);
                 }
                 else {

@@ -11,6 +11,7 @@ import com.github.au556265.myprojectapplication.Repository.Booking.BookingReposi
 import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewBookingViewModel extends BookingBaseViewModel {
     public ViewBookingViewModel(@NonNull Application application) {
@@ -23,8 +24,8 @@ public class ViewBookingViewModel extends BookingBaseViewModel {
     public ArrayList<Booking> getOnlyMyBookings(){
         return bookingRepository.getOnlyMyBookings();
     }
-    public LiveData<ArrayList<Booking>> getBookings() {
-        return bookingRepository;
+    public LiveData<List<Booking>> getBookings() {
+        return bookingRepository.getMutableBookings();
     }
 
 }

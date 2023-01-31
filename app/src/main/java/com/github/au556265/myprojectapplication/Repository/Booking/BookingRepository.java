@@ -31,15 +31,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class BookingRepository extends LiveData<ArrayList<Booking>> {
+public class BookingRepository {
     private static BookingRepository instance;
     private static final String TAG = "repository";
     private DatabaseReference myRef;
 
     private String email;
-
-    private BookingLiveData currentBooking;
     private final ArrayList<Booking> bookings = new ArrayList<>();
+    private MutableLiveData<List<Booking>> mutableBookings = new MutableLiveData<>();
 
 
     private BookingRepository(){
@@ -95,7 +94,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
                     bookings.add(booking);
 
                 }
-                setValue(bookings);
+                mutableBookings.setValue(bookings);
             }
 
             @Override
@@ -150,5 +149,10 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
                 return true;
         }
         return false;
+    }
+
+
+    public MutableLiveData<List<Booking>> getMutableBookings() {
+        return mutableBookings;
     }
 }

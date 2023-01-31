@@ -18,6 +18,7 @@ import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UpdateBookingsFragment extends Fragment {
 
@@ -50,9 +51,9 @@ public class UpdateBookingsFragment extends Fragment {
     }
 
     private void getLiveDataBookings() {
-        viewModel.getLiveDataBookings().observe(getViewLifecycleOwner(), new Observer<ArrayList<Booking>>() {
+        viewModel.getLiveDataBookings().observe(getViewLifecycleOwner(), new Observer<List<Booking>>() {
             @Override
-            public void onChanged(ArrayList<Booking> bookings) {
+            public void onChanged(List<Booking> bookings) {
                 adapter.setBookingItems(bookings);
                 //System.out.println(bookings.get(0));
             }
