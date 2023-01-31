@@ -116,10 +116,10 @@ public class AddServicesFragment extends Fragment {
 
     private void OnClicked() {
         String mName = name.getText().toString();
-        double mPrice = 0;
+        int mPrice = 0;
 
         try{
-            mPrice = Double.parseDouble(price.getText().toString());
+            mPrice = Integer.parseInt(price.getText().toString());
             viewModel.addService(mName, mPrice, stringImage);
             Toast.makeText(getContext(), "The service was successfull added succesfully", Toast.LENGTH_LONG).show();
         }

@@ -41,6 +41,7 @@ public class BookingRepository extends LiveData<ArrayList<Booking>> {
     private BookingLiveData currentBooking;
     private final ArrayList<Booking> bookings = new ArrayList<>();
 
+
     private BookingRepository(){
     }
 
