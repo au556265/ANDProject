@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ServicesRepository extends LiveData<ArrayList<Service>> {
+public class ServicesRepository implements IServiceRepository {
     private DatabaseReference myRef;
     private StorageReference storageRef;
     private static ServicesRepository instance;

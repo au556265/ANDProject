@@ -6,12 +6,13 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.github.au556265.myprojectapplication.Repository.Booking.BookingRepository;
+import com.github.au556265.myprojectapplication.Repository.Services.IServiceRepository;
 import com.github.au556265.myprojectapplication.Repository.Services.ServicesRepository;
 import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 public class ServiceBaseViewModel extends AndroidViewModel {
 
-    protected ServicesRepository servicesRepository;
+    protected IServiceRepository servicesRepository;
 
     public ServiceBaseViewModel(@NonNull Application application) {
         super(application);

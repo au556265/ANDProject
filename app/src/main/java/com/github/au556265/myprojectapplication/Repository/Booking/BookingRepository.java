@@ -2,36 +2,28 @@ package com.github.au556265.myprojectapplication.Repository.Booking;
 
 import android.os.Build;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.github.au556265.myprojectapplication.CallBacks.CallBackBooking;
 import com.github.au556265.myprojectapplication.Models.Booking;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
-public class BookingRepository {
+public class BookingRepository implements IBookingRepository{
     private static BookingRepository instance;
     private static final String TAG = "repository";
     private DatabaseReference myRef;
@@ -54,11 +46,10 @@ public class BookingRepository {
         return email;
     }
 
-    public void init(String userId) {
+    public void init() {
         myRef = FirebaseDatabase.getInstance("https://myprojectapplication-32774-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Bookings");
         email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        registerBookingsListener();
-
+        DataChangeBookingsListener();
     }
 
 
@@ -78,7 +69,7 @@ public class BookingRepository {
     }
 
 
-    public void registerBookingsListener(){
+    public void DataChangeBookingsListener(){
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -6,10 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.github.au556265.myprojectapplication.Repository.Booking.BookingRepository;
+import com.github.au556265.myprojectapplication.Repository.Booking.IBookingRepository;
 import com.github.au556265.myprojectapplication.Repository.User.UserRepository;
 
 public class BookingBaseViewModel extends AndroidViewModel {
-    protected BookingRepository bookingRepository;
+    protected IBookingRepository bookingRepository;
     protected final UserRepository userRepository;
 
     public BookingBaseViewModel(@NonNull Application application) {
@@ -19,7 +20,7 @@ public class BookingBaseViewModel extends AndroidViewModel {
     }
 
     public void init(){
-        String userId = userRepository.getCurrentUser().getValue().getUid();
-        bookingRepository.init(userId);
+        //String userId = userRepository.getCurrentUser().getValue().getUid();
+        bookingRepository.init();
     }
 }

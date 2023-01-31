@@ -41,7 +41,7 @@ public class ViewBookingAdapter extends RecyclerView.Adapter<ViewBookingAdapter.
         if(bookingList==null){
             return 0;
         }else
-        return bookingList.size();
+            return bookingList.size();
     }
 
     public void setBookingItems(List<Booking> bookingList) {
