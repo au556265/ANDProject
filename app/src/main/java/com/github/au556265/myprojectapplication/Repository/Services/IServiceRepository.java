@@ -10,4 +10,6 @@ public interface IServiceRepository {
     void init();
     void addServices(String name, int price, byte[] stringImage);
     LiveData<List<Service>> getSearchedServices();
+
+    void deleteService(String id);
 }

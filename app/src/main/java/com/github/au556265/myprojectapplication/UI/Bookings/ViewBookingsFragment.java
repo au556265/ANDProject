@@ -34,10 +34,6 @@ public class ViewBookingsFragment extends Fragment {
 
     ArrayList<String> adminAccount = new ArrayList<>();
 
-
-
-
-
     List<Booking> myBookings = new ArrayList<>();
 
 

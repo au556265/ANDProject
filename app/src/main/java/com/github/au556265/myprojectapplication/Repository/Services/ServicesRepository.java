@@ -84,5 +84,10 @@ public class ServicesRepository implements IServiceRepository {
     public LiveData<List<Service>> getSearchedServices() {
         return searchedServices;
     }
+
+    @Override
+    public void deleteService(String id) {
+        myRef.child(id).removeValue();
+    }
 }
 

@@ -25,4 +25,7 @@ public class AddServicesViewModel extends ServiceBaseViewModel {
         return servicesRepository.getSearchedServices();
     }
 
+    public void deleteService(String id) {
+        servicesRepository.deleteService(id);
+    }
 }

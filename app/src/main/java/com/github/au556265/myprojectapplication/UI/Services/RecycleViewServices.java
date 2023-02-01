@@ -19,6 +19,7 @@ import com.github.au556265.myprojectapplication.Models.Booking;
 import com.github.au556265.myprojectapplication.Models.Service;
 import com.github.au556265.myprojectapplication.Models.ServiceInformation;
 import com.github.au556265.myprojectapplication.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,8 @@ public class RecycleViewServices extends Fragment implements ServiceAdapter.OnLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
         View view = inflater.inflate(R.layout.fragment_recycle_view_services, container, false);
         viewModel = new ViewModelProvider(this).get(AddServicesViewModel.class);
         viewModel.init();
@@ -45,7 +48,7 @@ public class RecycleViewServices extends Fragment implements ServiceAdapter.OnLi
         recyclerView.hasFixedSize();
 
 
-        adapter = new ServiceAdapter();
+        adapter = new ServiceAdapter(email, this);
 
         recyclerView.setAdapter(adapter);
         // Inflate the layout for this fragment
@@ -82,5 +85,10 @@ public class RecycleViewServices extends Fragment implements ServiceAdapter.OnLi
 
     public void onClick(int position) {
         Toast.makeText(getContext(),"Position:",Toast.LENGTH_LONG).show();
+    }
+
+    public void deleteService(String id) {
+        viewModel.deleteService(id);
+        adapter.notifyDataSetChanged();
     }
 }

@@ -3,6 +3,7 @@ package com.github.au556265.myprojectapplication.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,11 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.github.au556265.myprojectapplication.Models.Service;
 import com.github.au556265.myprojectapplication.R;
+import com.github.au556265.myprojectapplication.UI.Services.RecycleViewServices;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder>{
+    private final String email;
+    private final RecycleViewServices recycleViewServices;
+
     public void setServiceInfo(List<Service> serviceInfo) {
         this.serviceInfo = serviceInfo;
     }
@@ -24,13 +29,10 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
     List<Service> serviceInfo;
     OnListItemClickListener listener;
 
-    public ServiceAdapter(List<Service> serviceInfo, OnListItemClickListener listener) {
-        this.serviceInfo = serviceInfo;
-        this.listener=listener;
-    }
-
-    public ServiceAdapter() {
+    public ServiceAdapter(String email, RecycleViewServices recycleViewServices) {
+        this.recycleViewServices = recycleViewServices;
         serviceInfo = new ArrayList<>();
+        this.email = email;
     }
 
     @NonNull
@@ -47,6 +49,13 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         holder.info.setText(serviceInfo.get(position).getName());
         holder.price.setText(serviceInfo.get(position).getPrice() + "");
         Glide.with(holder.itemView).load(serviceInfo.get(position).getUri()).into(holder.icon);
+
+        if(email.equals("admin@hotmail.com"))
+        {
+            holder.mdeleteButton.setOnClickListener(v -> {
+                recycleViewServices.deleteService(serviceInfo.get(position).getId());
+            });
+        }
     }
 
     @Override
@@ -58,6 +67,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         TextView info;
         ImageView icon;
         TextView price;
+        Button mdeleteButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +80,11 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
             info = itemView.findViewById(R.id.info);
             icon = itemView.findViewById(R.id.iv_icon);
             price = itemView.findViewById(R.id.price);
+
+            mdeleteButton = itemView.findViewById(R.id.delete_Services_button);
+
+            if(!email.equals("admin@hotmail.com"))
+                mdeleteButton.setVisibility(View.GONE);
 
         }
     }
