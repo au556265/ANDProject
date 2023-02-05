@@ -6,25 +6,31 @@
         <group android:id="@+id/data">
             <item
                 android:id="@+id/frontpage"
+                android:icon="@drawable/ic_salon"
                 android:title="@string/amsterdam_salon" />
 
             <item
                 android:id="@+id/serviceId"
+                android:icon="@drawable/ic_services"
                 android:title="Services" />
 
             <item
                 android:id="@+id/service_add_service_Id"
+                android:icon="@drawable/ic_add_services"
                 android:title="Add service" />
 
             <item
                 android:id="@+id/boookId"
+                android:icon="@drawable/ic_book_calendar"
                 android:title="@string/book_appointment" />
             <item
                 android:id="@+id/viewBookingId"
+                android:icon="@drawable/ic_view_calendar"
                 android:title="View bookings" />
 
             <item
                 android:id="@+id/deleteBookingId"
+                android:icon="@drawable/ic_delete"
                 android:title="Delete bookings" />
 
 

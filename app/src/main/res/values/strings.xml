@@ -17,6 +17,8 @@
     <string name="phone">Phone number</string>
     <string name="amsterdam">About Salon Amsterdam</string>
     <string name="date">Date </string>
+    <string name="jernbanegade_20_8800_viborg">Jenbanegade 20, 8800 Viborg</string>
+    <string name="_4571878181">+4571878181</string>
     <string-array name="time_array">
         <item>11:00</item>
         <item>11:30</item>
