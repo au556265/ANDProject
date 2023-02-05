@@ -10,18 +10,22 @@ The motivation for the salon-booking application is to make it easier for the sa
 High
 - [x] As a new customer I must be able to sign up. 
 - [x] As a user I want to be able to login with my email, so I can access the application. 
-- [x] As a user I want to be able to view the services, so I can see what the salon offers. 
 - [x] As a user I want to be able to book an appointment, so I save time. 
+- [x] As an employee I want to be able to add services that the salon offers.
 
 Medium
-- [ ] As an employee I want to be able to view the bookings, so I can keep a track of the bookings. 
-- [ ] As a customer I want to be able to delete my booking.
-- [ ] As an employee I want to be able to delete a customer's booking, so I can manage the bookings.
+- [x] As an employee I want to be able to view the bookings, so I can keep a track of the bookings. 
+- [x] As a customer I want to be able to delete my booking.
+- [x] As an employee I want to be able to delete a customer's booking, so I can manage the bookings.
 
 Low
+- [x] As a user I want to be able to view the services, so I can see what the salon offers.
 - [ ] As an employee I want to get a notification when a customer books an appointment.
-- [ ] As an employee I want to be able to add services that the salon offers.
 - [ ] As a user I want to be able to delete my account.
 
-Comments 
-- The Application is not completed
+#### Resources
+https://github.com/KasperKnop/NavigationExample
+https://github.com/KasperKnop/GoogleServicesExample
+https://firebase.google.com/docs/database/android/read-and-write
+https://firebase.google.com/docs/storage/android/upload-files
+Recycleview inspired from Android lesson
