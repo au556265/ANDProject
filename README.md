@@ -14,9 +14,10 @@ High
 - [x] As an employee I want to be able to add services that the salon offers.
 
 Medium
-- [x] As an employee I want to be able to view the bookings, so I can keep a track of the bookings. 
-- [x] As a customer I want to be able to delete my booking.
+- [x] As an employee I want to be able to view the bookings, so I can keep a track of the bookings.
 - [x] As an employee I want to be able to delete a customer's booking, so I can manage the bookings.
+- [x] As a customer I want to be able to view my bookings.
+- [x] As a customer I want to be able to delete my bookings.
 
 Low
 - [x] As a user I want to be able to view the services, so I can see what the salon offers.
@@ -24,8 +25,8 @@ Low
 - [ ] As a user I want to be able to delete my account.
 
 #### Resources
-https://github.com/KasperKnop/NavigationExample
-https://github.com/KasperKnop/GoogleServicesExample
-https://firebase.google.com/docs/database/android/read-and-write
-https://firebase.google.com/docs/storage/android/upload-files
-Recycleview inspired from Android lesson
+- https://github.com/KasperKnop/NavigationExample
+- https://github.com/KasperKnop/GoogleServicesExample
+- https://firebase.google.com/docs/database/android/read-and-write
+- https://firebase.google.com/docs/storage/android/upload-files
+- Recycleview and MVVM inspired from Android lessons
