@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".UI.Services.AddServicesFragment">
 
 
@@ -11,6 +12,9 @@
         android:id="@+id/service_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp"
         android:hint="Name"
         />
 
@@ -18,19 +22,36 @@
         android:id="@+id/service_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp"
         android:hint="price"
         />
 
     <Button
         android:id="@+id/service_select_image_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Image" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/placeholder"
+        android:paddingStart="40dp"
+        android:paddingLeft="40dp"
+        android:paddingEnd="40dp"
+        android:paddingRight="40dp"
+        />
 
     <Button
         android:id="@+id/service_add_service_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background"
+        android:paddingStart="60dp"
+        android:paddingLeft="60dp"
+        android:paddingEnd="60dp"
+        android:paddingRight="60dp"
         android:text="Add service" />
 
 
