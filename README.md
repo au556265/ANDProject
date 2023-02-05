@@ -1,10 +1,7 @@
 # MyProjectApplication
-The salon’s booking management has been run in an old-fashioned way for several years, the employees write the booking information on a diary which is time consuming and inefficient since they won’t be able to answer all calls when they are busy which makes them lose customers. It also effects the customer experience since the hairstylist won’t be able to give the customer full attention at their appointment when the phone rings. The salon has also experienced that a few customers don’t attend their appointment without canceling their 
-appointment. 
+The salon’s booking management has been running in an outdated style for several years. The employees handwrite the booking information onto a diary, which is both time-consuming and inefficient since, they won’t be able to answer all calls when they are busy, which results in their business rapidly losing customers. It also affects the customer service experience since the hairstylist won’t be able to give the customer their full attention at the scheduled appointment when the phone rings. The salon has also experienced that a few customers don’t attend their appointments without cancelling appointments.
 
-The motivation for the salon-booking application is to make it easier for the salon to manage their bookings, where the customer will be able to book and cancel appointments. The application will also have be able to display the salons offers and prices, in overall improve the customer/user experience.
-
-
+The motivation for the salon-booking application is to make it easier for the salon to manage their bookings so the customer can book and cancel appointments at their own speed. The application will also be able to display the salon offers and prices, which will overall improve the user experience.
 
 ## Requirements
 High
